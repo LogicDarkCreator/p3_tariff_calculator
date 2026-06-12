@@ -6,10 +6,6 @@ import ru.fastdelivery.domain.delivery.pack.Pack;
 
 import java.util.List;
 
-/**
- * @param packages упаковки в грузе
- * @param currency валюта объявленная для груза
- */
 public record Shipment(
         List<Pack> packages,
         Currency currency
@@ -18,5 +14,9 @@ public record Shipment(
         return packages.stream()
                 .map(Pack::weight)
                 .reduce(Weight.zero(), Weight::add);
+    }
+
+    public boolean hasDimensions() {
+        return packages.stream().anyMatch(Pack::hasDimensions);
     }
 }

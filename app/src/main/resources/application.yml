@@ -1,7 +1,24 @@
 currency:
   available:
     - "RUB"
+
 cost:
   rub:
     perKg: 400
     minimal: 350
+    perCubicMeter: 5000
+
+coordinates:
+  minLatitude: 45.0
+  maxLatitude: 65.0
+  minLongitude: 30.0
+  maxLongitude: 96.0
+  minDistanceKm: 450
+
+spring:
+  application:
+    name: tariff-calculator
+
+logging:
+  level:
+    ru.fastdelivery: DEBUG
